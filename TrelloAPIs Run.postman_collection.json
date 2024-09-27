@@ -491,6 +491,65 @@
 					"response": []
 				},
 				{
+					"name": "Archive List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"List Archived Successfully - Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"var listID = pm.environment.get(\"list_id\");\r",
+									"\r",
+									"var jsonData = pm.response.json();\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    pm.expect(jsonData.id).to.eql(listID);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Correct Archiving Status\", function () {\r",
+									"    pm.expect(jsonData.closed).to.eql(true);\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/1/lists/{{list_id}}/closed?key={{key}}&token={{token}}&value=true",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"1",
+								"lists",
+								"{{list_id}}",
+								"closed"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{key}}"
+								},
+								{
+									"key": "token",
+									"value": "{{token}}"
+								},
+								{
+									"key": "value",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Delete Board",
 					"event": [
 						{
