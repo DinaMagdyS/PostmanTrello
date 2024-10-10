@@ -36,15 +36,19 @@ This project demonstrates API testing using Postman for the Trello API. The test
 - Newman: You can install Newman using Node.js. Make sure you have Node.js installed, and then run the following command:
   ```bash
    npm install -g newman
+  ```
 
 ## Installation
 
 1. Clone this repository:
    ```bash
    git clone https://github.com/DinaMagdyS/PostmanTrello.git
+   ```
 2. Install the project dependencies:
-Install newman-reporter-htmlextra: 
+Install newman-reporter-htmlextra:
+```bash
 npm install -g newman-reporter-htmlextra
+ ```
 
 
 ## Usage
@@ -57,3 +61,9 @@ npm install -g newman-reporter-htmlextra
   You can also run the tests via the command line using Newman. Use the following command to run a specific test suite, specifying the environment: 
   ```bash
 newman run "TrelloAPIs Run.postman_collection.json" -e Trello_Env.postman_environment.json -r htmlextra
+```
+
+## Generating Reports
+Newman supports multiple reporters, including htmlextra, which generates detailed HTML reports for your API test runs. To generate HTML reports, simply specify the -r htmlextra option when running Newman, as shown in the example above.
+
+The HTML reports will be available in the reports directory of this repository.
