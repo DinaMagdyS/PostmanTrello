@@ -56,6 +56,17 @@ npm install -g newman-reporter-htmlextra
   1. After importing the collection and environment, you can run the requests individually to interact with the Trello API.
   2. You can also run the entire collection using the Postman Collection Runner to execute all API tests at once.
   3. Use the Postman console to debug and inspect responses from the Trello API.
+
+## Execution
+
+
+https://github.com/user-attachments/assets/2c13be5b-67c5-4b31-9da8-ad222fc85988
+
+
+
+https://github.com/user-attachments/assets/b604ab32-680b-4e72-8c75-23b815c7c54a
+
+
  
   ### Running Tests via Command Line using Newman
   You can also run the tests via the command line using Newman. Use the following command to run a specific test suite, specifying the environment: 
